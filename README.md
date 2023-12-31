@@ -6,3 +6,4 @@
 - 如果查询年是本年，当天的日期会标红
 
 **运行截图：**
+![image](https://github.com/chuzilaolin/FunBOX/assets/82101835/52d53cac-4654-4867-93ba-e3edf605cd1b)
