@@ -81,10 +81,11 @@ static void vector_rsize(Vector *v) {
         puts("error：给Vector的动态数组扩容失败");
         exit(-1);
     }
-    // tips：v->data扩容部分附上初值
-    memset(v->data + v->size, 0, (v->capacity - v->size) * sizeof(Element));
+    // 更新Vector信息
     v->data = temp;
     v->capacity = new_capacity;
+    // tips：v->data扩容部分附上初值
+    memset(v->data + v->size, 0, (v->capacity - v->size) * sizeof(Element));
 }
 
 // 将数组的元素从指定下标 idx 位置依次向后挪动1个位置
