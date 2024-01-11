@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.cjson": "jsonc",
+        "*.wxss": "css",
+        "*.wxs": "javascript",
+        "singly_linked_list.h": "c"
+    }
+}
