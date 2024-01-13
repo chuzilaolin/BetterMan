@@ -3,6 +3,7 @@
         "*.cjson": "jsonc",
         "*.wxss": "css",
         "*.wxs": "javascript",
-        "singly_linked_list.h": "c"
+        "singly_linked_list.h": "c",
+        "hash_map.h": "c"
     }
 }

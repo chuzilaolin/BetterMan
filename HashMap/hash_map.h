@@ -3,8 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <time.h>
 // 默认桶的个数(动态数组默认大小)
-#define DEFAULT_CAPACITY 10
+#define DEFAULT_CAPACITY 8
 // 默认负载因子
 #define DEFAULT_LOAD_FACTOR 0.75
 
@@ -29,12 +30,12 @@ typedef struct {
     Bucket **buckets;  // 存键值对的桶（动态的Bucket指针数组）
     int size;   // map中键值对个数
     int capacity; // map的容量
-    float load_factor; // map的负载因子
+    double load_factor; // map的负载因子
     uint32_t hash_seed; // hash函数的种子
 } HashMap;
 
 // 创建HashMap（容量和负载因子填NULL则使用默认值）
-HashMap* create_hashmap(const void* capacity, const void* load_factor);
+HashMap* create_hashmap(const void* capacity_p, const void* load_factor_p);
 // 销毁HashMap
 void destroy_hashmap(HashMap *map);
 // ---------------- 基本操作 ----------------
