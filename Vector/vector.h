@@ -5,7 +5,7 @@
 #define DEFAULT_CAPACITY 10 
 // 数组长度低于 HIGHT_SIZE 时，每次按照原长度翻倍扩容
 // 数组长度高于 HIGHT_SIZE 时，扩充原容量的1/2
-#define HIGHT_SIZE 1000 
+#define HIGHT_SIZE 1024 
 
 // 定义存储的数据类型
 typedef char* Element;
