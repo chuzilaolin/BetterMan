@@ -20,9 +20,13 @@ int main(void) {
     // 判断表中是否包含key
     printf("%s\n", contains(map, "age") ? "存在" : "不存在");
     // 删值
+    map_remove(map, "name");
     map_remove(map, "age");
+    map_remove(map, "gender");
     // 判断表中是否包含key
     printf("%s\n", contains(map, "age") ? "存在" : "不存在");
+    // 表判空
+    printf("%s\n", is_empty(map) ? "表为空" : "表不空");
 
 
 
@@ -180,6 +184,8 @@ bool map_remove(HashMap *map, K key) {
                 }
                 // 4. 释放内存
                 free(cur);
+                // 5. 更新size 
+                map->size--;
                 return true;
             }
             pre = cur;
