@@ -45,10 +45,10 @@ V put(HashMap *map, K key, V val);
 // 查询键值对
 V get(const HashMap *map, K key);
 // 删除键值对
-bool map_remove(HashMap *map);
+bool map_remove(HashMap *map, K key);
 // 键key在表中是否有对应的值
 bool contains(const HashMap *map, K key);
-// 判断是否为空
+// 判断表是否为空
 bool is_empty(const HashMap *map);
 
 // ---------------- 其他操作 ----------------

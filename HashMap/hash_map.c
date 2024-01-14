@@ -14,7 +14,7 @@ int main(void) {
     printf("%s\n", get(map, "name"));
     printf("%s\n", get(map, "gender1"));
     // 删值
-
+    map_remove(map)
 
 
 
@@ -151,7 +151,7 @@ V get(const HashMap *map, K key) {
     return NULL;
 }
 // 删除键值对
-bool map_remove(HashMap *map) {
+bool map_remove(HashMap *map, K key) {
     if (map == NULL) {
         puts("error：map_remove()的参数map为NULL");
         exit(-1);
@@ -168,24 +168,20 @@ bool contains(const HashMap *map, K key) {
 
     return false;
 }
-// 判断是否为空
+// 判断表是否为空
 bool is_empty(const HashMap *map) {
     if (map == NULL) {
         puts("error：is_empty()的参数map为NULL");
         exit(-1);
     }
-
-    return false;
+    return map->size == 0;
 }
 
 // ---------------- 其他操作 ----------------
 // 是否需要扩容
 static bool is_need_resize(const HashMap *map) {
     double load_factor = map->size*1.0 / map->capacity;
-    if (load_factor > map->load_factor) {
-        return true;
-    }
-    return false;
+    return load_factor > map->load_factor;
 }
 // TODO：扩容
 static void resize(HashMap *map) {
