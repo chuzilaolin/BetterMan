@@ -2,7 +2,7 @@
 
 int main(void) {
     // 创建hashmap
-    int capacity = 3;
+    int capacity = 1;
     double load_factor = 0.70;
     HashMap *map = create_hashmap(&capacity, &load_factor);
     // 表判空
@@ -11,7 +11,8 @@ int main(void) {
     put(map, "name", "tom");
     put(map, "age", "20");
     put(map, "gender", "male");
-    put(map, "gender", "male1");
+    put(map, "gender1", "male");
+    put(map, "gender2", "male");
     // 取值
     printf("%s\n", get(map, "name"));
     printf("%s\n", get(map, "gender1"));
@@ -27,9 +28,6 @@ int main(void) {
     printf("%s\n", contains(map, "age") ? "存在" : "不存在");
     // 表判空
     printf("%s\n", is_empty(map) ? "表为空" : "表不空");
-
-
-
 
 
 
@@ -217,9 +215,31 @@ static bool is_need_resize(const HashMap *map) {
     double load_factor = map->size*1.0 / map->capacity;
     return load_factor > map->load_factor;
 }
-// TODO：扩容
+// 扩容
 static void resize(HashMap *map) {
-
+    // 1. 创建新的桶数组
+    int old_cap = map->capacity;
+    // 每次扩容2倍，好处是，每次新下标就是old_idx或者为old_idx+(new_cap-old_cap)！！！（详见Java8hashmap扩容）
+    int new_cap = old_cap << 1; 
+    Bucket **new_buckets = calloc(new_cap, sizeof(Bucket));
+    // TODO: 2. 挪动旧桶中的数据到新桶中
+    Bucket **old_buckets = map->buckets;
+    for (int idx = 0; idx < old_cap; idx++) {
+        Bucket *cur = old_buckets[idx];
+        if (cur != NULL) { // 只操作非空桶
+            // 2-1. 计算新的位置idx
+            int new_idx = cur->hash_code % new_cap;
+            // 2-2. 挪动桶
+            new_buckets[new_idx] = old_buckets[idx];
+        } 
+    }
+    // 3. 将新桶交给hashmap
+    map->buckets = new_buckets;
+    // 4. 更新hashmap的容量
+    map->capacity = new_cap;
+    // 5. 将就旧桶销毁
+    free(old_buckets);
+    puts("扩容了。。。。。。。。");
 }
 
 // murmur_hash2 哈希函数
