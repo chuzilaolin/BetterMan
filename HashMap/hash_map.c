@@ -164,7 +164,28 @@ bool map_remove(HashMap *map, K key) {
         puts("error：map_remove()的参数map为NULL");
         exit(-1);
     }
-    
+     // 1. 计算key的hash值应存放的桶的位置idx
+    int idx = hash(key, strlen(key), map->hash_seed) % map->capacity;
+    // 2. 在idx位置的桶中搜索对应key值
+    if (map->buckets[idx] != NULL) { // 先判断桶是否为空
+        MapNode *pre = NULL;
+        MapNode *cur = map->buckets[idx]->head;
+        while(cur != NULL) {
+            if (strcmp(cur->key, key) == 0) {
+                // 3. 删除结点
+                if (pre == NULL) { // 删除的是第一个结点
+                    map->buckets[idx]->head = cur->next;
+                }else {
+                    pre->next = cur->next;
+                }
+                // 4. 释放内存
+                free(cur);
+                return true;
+            }
+            pre = cur;
+            cur = cur->next;
+        }
+    }
     return false;
 }
 // 键key在表中是否有对应的值
