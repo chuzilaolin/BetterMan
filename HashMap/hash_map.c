@@ -238,7 +238,6 @@ static void resize(HashMap *map) {
     map->capacity = new_cap;
     // 5. 将就旧桶销毁
     free(old_buckets);
-    puts("扩容了。。。。。。。。");
 }
 
 // murmur_hash2 哈希函数
