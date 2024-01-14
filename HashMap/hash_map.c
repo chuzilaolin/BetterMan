@@ -31,7 +31,6 @@ int main(void) {
 
 
 
-
     // 销毁
     destroy_hashmap(map);
     return 0;
@@ -47,7 +46,7 @@ HashMap* create_hashmap(const void* capacity_p, const void* load_factor_p) {
     }
     //2. 初始化Bucket动态数组
     int capacity = capacity_p == NULL ? DEFAULT_CAPACITY : *(int*)capacity_p;
-    Bucket **buckets = calloc(capacity, sizeof(Bucket));
+    Bucket **buckets = calloc(capacity, sizeof(Bucket*));
     if (map == NULL) {
         puts("error：create_hashmap()内分配内存失败");
         free(map);
