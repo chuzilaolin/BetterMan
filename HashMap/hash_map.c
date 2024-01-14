@@ -220,8 +220,8 @@ static void resize(HashMap *map) {
     int old_cap = map->capacity;
     // 每次扩容2倍，好处是，每次新下标就是old_idx或者为old_idx+(new_cap-old_cap)！！！（详见Java8hashmap扩容）
     int new_cap = old_cap << 1; 
-    Bucket **new_buckets = calloc(new_cap, sizeof(Bucket));
-    // TODO: 2. 挪动旧桶中的数据到新桶中
+    Bucket **new_buckets = calloc(new_cap, sizeof(Bucket*));
+    // 2. 挪动旧桶中的数据到新桶中
     Bucket **old_buckets = map->buckets;
     for (int idx = 0; idx < old_cap; idx++) {
         Bucket *cur = old_buckets[idx];
