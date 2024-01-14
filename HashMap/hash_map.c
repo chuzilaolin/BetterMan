@@ -5,6 +5,8 @@ int main(void) {
     int capacity = 3;
     double load_factor = 0.70;
     HashMap *map = create_hashmap(&capacity, &load_factor);
+    // 表判空
+    printf("%s\n", is_empty(map) ? "表为空" : "表不空");
     // 存值
     put(map, "name", "tom");
     put(map, "age", "20");
@@ -13,8 +15,14 @@ int main(void) {
     // 取值
     printf("%s\n", get(map, "name"));
     printf("%s\n", get(map, "gender1"));
+    // 表判空
+    printf("%s\n", is_empty(map) ? "表为空" : "表不空");
+    // 判断表中是否包含key
+    printf("%s\n", contains(map, "age") ? "存在" : "不存在");
     // 删值
-    map_remove(map)
+    map_remove(map, "age");
+    // 判断表中是否包含key
+    printf("%s\n", contains(map, "age") ? "存在" : "不存在");
 
 
 
@@ -165,8 +173,7 @@ bool contains(const HashMap *map, K key) {
         puts("error：contains()的参数map为NULL");
         exit(-1);
     }
-
-    return false;
+    return get(map, key) != NULL;
 }
 // 判断表是否为空
 bool is_empty(const HashMap *map) {
