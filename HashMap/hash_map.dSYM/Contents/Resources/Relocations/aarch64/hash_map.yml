@@ -1,0 +1,17 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/lingang/VscodeProjects/FunBOX/HashMap/hash_map'
+relocations:
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x10000338C, symSize: 0x100 }
+  - { offsetInCU: 0x72, offset: 0x72, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x0, symBinAddr: 0x10000338C, symSize: 0x100 }
+  - { offsetInCU: 0xB6, offset: 0xB6, size: 0x8, addend: 0x0, symName: _create_hashmap, symObjAddr: 0x100, symBinAddr: 0x10000348C, symSize: 0x150 }
+  - { offsetInCU: 0x124, offset: 0x124, size: 0x8, addend: 0x0, symName: _put, symObjAddr: 0x250, symBinAddr: 0x1000035DC, symSize: 0x2BC }
+  - { offsetInCU: 0x1E6, offset: 0x1E6, size: 0x8, addend: 0x0, symName: _get, symObjAddr: 0x50C, symBinAddr: 0x100003898, symSize: 0x104 }
+  - { offsetInCU: 0x238, offset: 0x238, size: 0x8, addend: 0x0, symName: _destroy_hashmap, symObjAddr: 0x610, symBinAddr: 0x10000399C, symSize: 0xFC }
+  - { offsetInCU: 0x2CC, offset: 0x2CC, size: 0x8, addend: 0x0, symName: _hash, symObjAddr: 0x70C, symBinAddr: 0x100003A98, symSize: 0x19C }
+  - { offsetInCU: 0x364, offset: 0x364, size: 0x8, addend: 0x0, symName: _is_need_resize, symObjAddr: 0x8A8, symBinAddr: 0x100003C34, symSize: 0x94 }
+  - { offsetInCU: 0x39A, offset: 0x39A, size: 0x8, addend: 0x0, symName: _resize, symObjAddr: 0x93C, symBinAddr: 0x100003CC8, symSize: 0x10 }
+  - { offsetInCU: 0x3BE, offset: 0x3BE, size: 0x8, addend: 0x0, symName: _map_remove, symObjAddr: 0x94C, symBinAddr: 0x100003CD8, symSize: 0x4C }
+  - { offsetInCU: 0x3E6, offset: 0x3E6, size: 0x8, addend: 0x0, symName: _contains, symObjAddr: 0x998, symBinAddr: 0x100003D24, symSize: 0x50 }
+  - { offsetInCU: 0x41C, offset: 0x41C, size: 0x8, addend: 0x0, symName: _is_empty, symObjAddr: 0x9E8, symBinAddr: 0x100003D74, symSize: 0x4C }
+...

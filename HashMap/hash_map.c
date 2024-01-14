@@ -9,8 +9,10 @@ int main(void) {
     put(map, "name", "tom");
     put(map, "age", "20");
     put(map, "gender", "male");
+    put(map, "gender", "male1");
     // 取值
     printf("%s\n", get(map, "name"));
+    printf("%s\n", get(map, "gender1"));
     // 删值
 
 
@@ -134,7 +136,18 @@ V get(const HashMap *map, K key) {
         puts("error：get()的参数map为NULL");
         exit(-1);
     }
-
+    // 1. 计算key的hash值应存放的桶的位置idx
+    int idx = hash(key, strlen(key), map->hash_seed) % map->capacity;
+    // 2. 在idx位置的桶中搜索对应key值
+    if (map->buckets[idx] != NULL) { // 先判断桶是否为空
+        MapNode *cur = map->buckets[idx]->head;
+        while(cur != NULL) {
+            if (strcmp(cur->key, key) == 0) {
+                return cur->value;
+            }
+            cur = cur->next;
+        }
+    }
     return NULL;
 }
 // 删除键值对
