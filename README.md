@@ -1,20 +1,45 @@
-# 一些有趣的小工具小项目
+# C语言练手项目集
 
-### 一、命令行日历查看程序
+### 一、目录
+[1. 命令行日历小程序](https://github.com/chuzilaolin/FunBOX/tree/main/Commandlinecalendar)
+[2. 动态数组Vector](https://github.com/chuzilaolin/FunBOX/tree/main/Vector)
+[3. 哈希表HashMap](https://github.com/chuzilaolin/FunBOX/tree/main/HashMap)
+
+
+
+
+### 二、TODO List
+- [ ] 基于链表的队列Queue
+- [ ] 基于循环数组的队列Queue
+- [ ] 基于链表的栈Stack
+- [ ] 基于动态数组的栈Stack
+- [ ] 表达式求值小程序
+- [ ] 双向链表
+- [ ] 二叉搜索树
+- [ ] 红黑树
+- [ ] B树
+- [ ] B+树
+- [ ] 跳表
+
+### 三、项目说明
+
+#### 1. 命令行日历小程序
+
 **功能说明：** 
+
 - 输入一个年份数字就可以查看这一年的全年日历；
 - 如果查询年是本年，当天的日期会标红。
 
 **运行截图：**
 <img width="948" alt="image" src="https://github.com/chuzilaolin/FunBOX/assets/82101835/a2e6c90b-00a6-4320-aa21-4d7db6d3c25f">
 
-### 二、用C语言实现动态数组Vector
+#### 2. 动态数组Vector
 **实现原理：**
 
 定义一个结构体类型，在结构体中用指针指向一个在堆空间开辟的一块内存。
 ![image](https://github.com/chuzilaolin/FunBOX/assets/82101835/dc5e3430-5805-4d09-920f-c9a7ca6733fd)
 
-### 三、用C语言实现哈希表HashMap
+#### 3. 哈希表HashMap
 **功能说明：**
 - 自定义初始容量和负载因子；
 - 当键值对的个数与容量比值超过负载因子时，自动扩容；
@@ -25,10 +50,10 @@
 
 ![hashmap-array linkedlist drawio](https://github.com/chuzilaolin/FunBOX/assets/82101835/14fa9df7-9469-497b-8859-c73a6e8de5d8)
 
-### 四、用C语言实现队列Queue
+#### 4. 基于链表的队列Queue
 **功能说明：**
-- 队列创建
-- 销毁
+- 创建队列
+- 销毁队列
 - 入队
 - 出队
 - 查看队头 
@@ -37,24 +62,31 @@
 **实现原理：**
 基于单向链表实现，从尾部插入，从头部取出。
 
-### 五、用C语言实现栈Stack
+#### 5. 基于循环数组的队列Queue
+
+
+
+#### 6. 基于链表的栈Stack
+
+
+
+#### 7. 基于动态数组的栈Stack
+
 **功能说明：**
 
 **实现原理：**
 基于动态数组实现栈；比起用链表方式，随机访问效率高且不需要额外空间存储指针，但重分配内存那一刻可能涉及巨大的内存开销，拖慢整体栈的效率。
 
-### 六、命令行表达式运算程序
+#### 8. 表达式求值小程序
 **功能说明：**
 
-**运行截图：**
+- 在命令行输入一串运算表达式，计算得到结果；
 
-### 七、用C语言实现单向链表
+#### 9. 双向链表
 
-
-### 八、用C语言实现双向链表
-
-
-### 九、用C语言实现二叉搜索树
+**功能说明：**
 
 
+#### 10. 二叉搜索树
 
+**功能说明：**
