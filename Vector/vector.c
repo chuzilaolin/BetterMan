@@ -3,7 +3,9 @@
 #include <string.h>
 #include "vector.h"
 
-// 创建一个空的Vector
+/**
+ * 创建一个空的Vector
+*/
 Vector* vector_create() {
     Vector *v = (Vector*)calloc(1, sizeof(Vector));
     if (v == NULL) {
@@ -21,7 +23,9 @@ Vector* vector_create() {
     return v;
 }
 
-// 销毁释放Vector
+/**
+ * 销毁释放Vector
+*/
 void vector_destroy(Vector *v) {
     if (v == NULL) { // Vector不能是NULL
         return;
@@ -30,7 +34,9 @@ void vector_destroy(Vector *v) {
     free(v);
 }
 
-// 向动态数组的末尾新增一个元素
+/**
+ * 向动态数组的末尾新增一个元素
+*/
 void vector_push_back(Vector *v, Element val) {
     if (v == NULL) { // Vector不能是NULL
         return;
@@ -42,7 +48,9 @@ void vector_push_back(Vector *v, Element val) {
     v->size++;
 }
 
-// 向数组的前面插入一个元素
+/**
+ * 向数组的前面插入一个元素
+*/
 void vector_push_front(Vector *v, Element val) {
     if (v == NULL) { // Vector不能是NULL
         return;
@@ -56,7 +64,9 @@ void vector_push_front(Vector *v, Element val) {
     v->size++;
 }
 
-// 将元素val添加到索引为idx的位置，idx后面的元素依次后移
+/**
+ * 将元素val添加到索引为idx的位置，idx后面的元素依次后移
+*/
 void vector_insert(Vector *v, int idx, Element val) {
     if (v == NULL || idx < 0 || idx > v->size) { // Vector不能是NULL，索引位置不能为负且不能越界
         return;
@@ -69,7 +79,9 @@ void vector_insert(Vector *v, int idx, Element val) {
     v->size++;
 }
 
-// 给Vector的动态数组扩容
+/**
+ * 给Vector的动态数组扩容
+*/
 static void vector_rsize(Vector *v) {
     int old_capacity = v->capacity;
     // tips：算术运算‘+’的优先级比位运算符‘>>’高，要用括号括起来
@@ -88,7 +100,9 @@ static void vector_rsize(Vector *v) {
     memset(v->data + v->size, 0, (v->capacity - v->size) * sizeof(Element));
 }
 
-// 将数组的元素从指定下标 idx 位置依次向后挪动1个位置
+/**
+ * 将数组的元素从指定下标 idx 位置依次向后挪动1个位置
+ */ 
 static void move_data(Vector *v, int idx) {
     for (int i = v->size - 1; i >= idx; i--) {
         v->data[i+1] = v->data[i];
