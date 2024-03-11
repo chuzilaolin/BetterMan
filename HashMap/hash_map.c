@@ -1,42 +1,15 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+#include <time.h>
+#include <stdint.h>
 #include "hash_map.h"
 
-int main(void) {
-    // 创建hashmap
-    int capacity = 1;
-    double load_factor = 0.70;
-    HashMap *map = create_hashmap(&capacity, &load_factor);
-    // 表判空
-    printf("%s\n", is_empty(map) ? "表为空" : "表不空");
-    // 存值
-    put(map, "name", "tom");
-    put(map, "age", "20");
-    put(map, "gender", "male");
-    put(map, "gender1", "male");
-    put(map, "gender2", "male");
-    // 取值
-    printf("%s\n", get(map, "name"));
-    printf("%s\n", get(map, "gender1"));
-    // 表判空
-    printf("%s\n", is_empty(map) ? "表为空" : "表不空");
-    // 判断表中是否包含key
-    printf("%s\n", contains(map, "age") ? "存在" : "不存在");
-    // 删值
-    map_remove(map, "name");
-    map_remove(map, "age");
-    map_remove(map, "gender");
-    // 判断表中是否包含key
-    printf("%s\n", contains(map, "age") ? "存在" : "不存在");
-    // 表判空
-    printf("%s\n", is_empty(map) ? "表为空" : "表不空");
 
-
-
-    // 销毁
-    destroy_hashmap(map);
-    return 0;
-}
-
-// 创建HashMap（容量和负载因子填NULL则使用默认值）
+/**
+ * 创建HashMap（容量和负载因子填NULL则使用默认值）
+*/
 HashMap* create_hashmap(const void* capacity_p, const void* load_factor_p) {
     // 1. 创建hashmap
     HashMap *map = calloc (1, sizeof(HashMap));
@@ -60,7 +33,9 @@ HashMap* create_hashmap(const void* capacity_p, const void* load_factor_p) {
     map->hash_seed = time(NULL);
     return map;
 }
-// 销毁HashMap
+/**
+ * 销毁HashMap
+*/
 void destroy_hashmap(HashMap *map) {
     if (map == NULL) {
         puts("error：destroy_hashmap()的参数map为NULL");
@@ -84,7 +59,9 @@ void destroy_hashmap(HashMap *map) {
     free(map);
 }
 // ---------------- 基本操作 ----------------
-// 存入键值对
+/**
+ * 存入键值对
+*/
 V put(HashMap *map, K key, V val) {
     if (map == NULL) {
         puts("error：put()的参数map为NULL");
@@ -139,7 +116,9 @@ V put(HashMap *map, K key, V val) {
     map->size++;
     return NULL;
 }
-// 查询键值对
+/**
+ * 查询键值对
+*/
 V get(const HashMap *map, K key) {
     if (map == NULL) {
         puts("error：get()的参数map为NULL");
@@ -159,7 +138,9 @@ V get(const HashMap *map, K key) {
     }
     return NULL;
 }
-// 删除键值对
+/**
+ * 删除键值对
+*/
 bool map_remove(HashMap *map, K key) {
     if (map == NULL) {
         puts("error：map_remove()的参数map为NULL");
@@ -191,7 +172,9 @@ bool map_remove(HashMap *map, K key) {
     }
     return false;
 }
-// 键key在表中是否有对应的值
+/**
+ * 键key在表中是否有对应的值
+*/
 bool contains(const HashMap *map, K key) {
     if (map == NULL) {
         puts("error：contains()的参数map为NULL");
@@ -199,7 +182,9 @@ bool contains(const HashMap *map, K key) {
     }
     return get(map, key) != NULL;
 }
-// 判断表是否为空
+/**
+ * 判断表是否为空
+*/
 bool is_empty(const HashMap *map) {
     if (map == NULL) {
         puts("error：is_empty()的参数map为NULL");
@@ -209,12 +194,16 @@ bool is_empty(const HashMap *map) {
 }
 
 // ---------------- 其他操作 ----------------
-// 是否需要扩容
+/**
+ * 是否需要扩容
+*/
 static bool is_need_resize(const HashMap *map) {
     double load_factor = map->size*1.0 / map->capacity;
     return load_factor > map->load_factor;
 }
-// 扩容
+/**
+ * 扩容
+*/
 static void resize(HashMap *map) {
     // 1. 创建新的桶数组
     int old_cap = map->capacity;
@@ -240,7 +229,9 @@ static void resize(HashMap *map) {
     free(old_buckets);
 }
 
-// murmur_hash2 哈希函数
+/**
+ * murmur_hash2 哈希函数
+*/
 static uint32_t hash(const void* key, int len, uint32_t seed) {
     const uint32_t m = 0x5bd1e995;
     const int r = 24;
