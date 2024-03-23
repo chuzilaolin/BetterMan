@@ -1,16 +1,9 @@
-# C语言练手项目集
+# C/C++练手项目集
 
 ### 一、目录
-[1. 命令行日历小程序](https://github.com/chuzilaolin/FunBOX/tree/main/Commandlinecalendar)
-
-[2. 动态数组Vector](https://github.com/chuzilaolin/FunBOX/tree/main/Vector)
-
-[3. 哈希表HashMap](https://github.com/chuzilaolin/FunBOX/tree/main/HashMap)
-
-
-
-
-### 二、TODO List
+- [x] [命令行日历小程序](https://github.com/chuzilaolin/FunBOX/tree/main/Commandlinecalendar)
+- [x] [动态数组Vector](https://github.com/chuzilaolin/FunBOX/tree/main/Vector)
+- [x] [哈希表HashMap](https://github.com/chuzilaolin/FunBOX/tree/main/HashMap)
 - [ ] 基于链表的队列Queue
 - [ ] 基于循环数组的队列Queue
 - [ ] 基于链表的栈Stack
@@ -23,7 +16,7 @@
 - [ ] B+树
 - [ ] 跳表
 
-### 三、项目说明
+### 二、项目说明
 
 #### 1. 命令行日历小程序
 
