@@ -15,7 +15,7 @@
 - [ ] B树
 - [ ] B+树
 - [ ] 跳表
-- [ ] [封装线程池 (c++)](https://github.com/chuzilaolin/FreeTime/tree/main/cpp/ThreadPool)
+- [x] [封装线程池 (c++)](https://github.com/chuzilaolin/FreeTime/tree/main/cpp/ThreadPool)
 
 ### 二、项目说明
 
