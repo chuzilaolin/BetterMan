@@ -1,9 +1,9 @@
 # C/C++练手项目集
 
 ### 一、目录
-- [x] [命令行日历小程序](https://github.com/chuzilaolin/FunBOX/tree/main/Commandlinecalendar)
-- [x] [动态数组Vector](https://github.com/chuzilaolin/FunBOX/tree/main/Vector)
-- [x] [哈希表HashMap](https://github.com/chuzilaolin/FunBOX/tree/main/HashMap)
+- [x] [命令行日历小程序 (c)](https://github.com/chuzilaolin/FunBOX/tree/main/Commandlinecalendar)
+- [x] [动态数组Vector (c)](https://github.com/chuzilaolin/FunBOX/tree/main/Vector)
+- [x] [哈希表HashMap (c)](https://github.com/chuzilaolin/FunBOX/tree/main/HashMap)
 - [ ] 基于链表的队列Queue
 - [ ] 基于循环数组的队列Queue
 - [ ] 基于链表的栈Stack
@@ -15,6 +15,7 @@
 - [ ] B树
 - [ ] B+树
 - [ ] 跳表
+- [ ] [封装线程池 (c++)](https://github.com/chuzilaolin/FreeTime/tree/main/cpp/ThreadPool)
 
 ### 二、项目说明
 
