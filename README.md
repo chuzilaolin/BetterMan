@@ -1,6 +1,9 @@
 # C/C++练手项目集
+> C++不是世界上最好的语言（【狗头保命🐶】），但是我很喜欢它。
 
-### 一、目录
+**项目介绍**：这个项目记录了我用c++实现的一些小玩意儿。编程虽然是我的爱好，但是我开悟得晚，技术能力也才刚刚起步，所以不敢说这个项目对各位“码友”有什么太大的帮助，只是一起交流学习罢了🀀🀂🀁🀃🀅。
+
+### 一、目录（难度不分先后）
 - [x] [命令行日历小程序 (c)](https://github.com/chuzilaolin/FunBOX/tree/main/Commandlinecalendar)
 - [x] [动态数组Vector (c)](https://github.com/chuzilaolin/FunBOX/tree/main/Vector)
 - [x] [哈希表HashMap (c)](https://github.com/chuzilaolin/FunBOX/tree/main/HashMap)
@@ -16,6 +19,8 @@
 - [ ] B+树
 - [ ] 跳表
 - [x] [封装线程池 (c++)](https://github.com/chuzilaolin/FreeTime/tree/main/cpp/ThreadPool)
+- [x] [封装string类（c++）](https://blog.csdn.net/weixin_44398687/article/details/136725095)
+- [x] [C++ Primer上的简单词频统计（c++）](https://blog.csdn.net/weixin_44398687/article/details/136793289)  
 
 ### 二、项目说明
 
